@@ -1,0 +1,19 @@
+# legacy_ccus/ 专用依赖 —— 与根目录 requirements.txt 严格分离
+#
+# 为什么分开：这些脚本是父项目 CCUS 的副本（2026-11-18 归档到 legacy_ccus/），
+# CDP 下载链依赖 playwright（自带浏览器驱动 + campus-paper-fetch 的常驻会话），
+# PDF 复核依赖 pypdf；与根 .venv 的 requests/pdfplumber 混装容易在 Windows 上撞 DLL。
+# 根 .venv 只服务澳门本项目的运行脚本。
+#
+# 安装：
+#   python -m venv legacy_ccus/.venv
+#   legacy_ccus\.venv\Scripts\pip.exe install -r requirements-tools.txt
+#
+# 运行归属：
+#   legacy_ccus/.venv → fetch_sd_cdp.py / fetch_pdf_cdp.py / verify_pdfs.py
+#   根 .venv         → 澳门项目全部脚本（fetch_unpaywall_one.py 已随归档移出）
+
+playwright
+pypdf
+fonttools
+campus-paper-fetch

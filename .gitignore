@@ -1,0 +1,13 @@
+config.yaml
+data/*.sqlite
+data/*.sqlite-journal
+data/backups/
+logs/
+__pycache__/
+*.pyc
+.venv/
+tools/.venv/
+.pytest_cache/
+*.log
+.DS_Store
+Thumbs.db

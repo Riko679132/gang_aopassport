@@ -1,0 +1,4 @@
+-r requirements.txt
+streamlit
+opencc-python-reimplemented
+rapidocr-onnxruntime
